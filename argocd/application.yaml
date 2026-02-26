@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/maxengna/To-Do-List-Devop-Deploy-.git
     targetRevision: master
-    path: k8s 
+    path: argocd
   destination:
     server: https://kubernetes.default.svc
     namespace: k8-deployment
