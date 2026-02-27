@@ -14,9 +14,9 @@ spec:
     namespace: k8-deployment
 
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
+    # automated:
+      # prune: true
+      # selfHeal: true
     syncOptions:
       - CreateNamespace=true
        
