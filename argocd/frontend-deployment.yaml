@@ -38,7 +38,7 @@ spec:
     - protocol: TCP 
       port: 4173
       targetPort: 4173
-      nodePort: 30000
+      nodePort: 30001
   selector:
     app: todolist-app
     tier: frontend
