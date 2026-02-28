@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress-svc
+  namespace: k8-deployment
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: todolist.app.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            frontend:
+              service:
+                name: frontend
+                port:
+                  number: 4173

@@ -33,7 +33,7 @@ metadata:
     app: todolist-app
     tier: frontend
 spec:
-  type: NodePort
+  # type: NodePort
   ports:
     - protocol: TCP 
       port: 4173
