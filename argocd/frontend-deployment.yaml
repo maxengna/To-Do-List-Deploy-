@@ -9,8 +9,6 @@ spec:
     matchLabels:
       app: todolist-app
       tier: frontend
-#  strategy:
-#    type: Recreate
   template:
     metadata:
       name: react-pod
