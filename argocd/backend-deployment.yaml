@@ -19,7 +19,7 @@ spec:
         tier: backend
     spec:
       containers:
-        - image: maxdev888/todo-list-app:backend-35
+        - image: maxdev888/todo-list-app:backend-36
           name: backend-container
           ports:
             - containerPort: 8081
