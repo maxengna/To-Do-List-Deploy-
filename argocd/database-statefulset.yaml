@@ -67,7 +67,6 @@ spec:
       containers:
       - name: mysql-container
         image: maxdev888/todo-list-app:database-33
-#        imagePullPolicy: Always
         ports:
         - containerPort: 3306
           name: mysql-port
