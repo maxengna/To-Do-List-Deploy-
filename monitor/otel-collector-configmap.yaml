@@ -16,7 +16,7 @@ data:
         tls:
           insecure: true
 
-       otlphttp/loki:
+      otlphttp/loki:
         endpoint: http://loki:3100/otlp
 
       prometheus:
