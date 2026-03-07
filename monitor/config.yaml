@@ -1,34 +1,37 @@
 receivers:
   otlp:
     protocols:
-      http:
       grpc:
+      http:
+
+processors:
+  batch:
 
 exporters:
   otlp/tempo:
     endpoint: tempo:4317
     tls:
       insecure: true
+
   loki:
     endpoint: http://loki:3100/loki/api/v1/push
-    labels:
-      job: otel-collector
+
   prometheus:
     endpoint: "0.0.0.0:8889"
 
-processors:
-  batch:
-
 service:
   pipelines:
+
     traces:
       receivers: [otlp]
       processors: [batch]
       exporters: [otlp/tempo]
+
     logs:
-      receivers: [otlp] 
+      receivers: [otlp]
       processors: [batch]
       exporters: [loki]
+
     metrics:
       receivers: [otlp]
       processors: [batch]
