@@ -24,6 +24,11 @@ spec:
           ports:
             - containerPort: 8081
               name: webserver-port
+          env:
+            - name: todo-backend
+              value: todo-backend
+            - name: OTEL_EXPORTER_OTLP_ENDPOINT
+              value: http://otel-collector:4318
 ---
 apiVersion: v1
 kind: Service
