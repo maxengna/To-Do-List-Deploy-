@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: otel-collector-config
 data:
-  config.yaml: |
+  configs/config.yaml: |
     receivers:
       otlp:
         protocols:
