@@ -25,7 +25,7 @@ spec:
                 isDefault: true
               - name: Loki
                 type: loki
-                url: http://loki.observability.svc.cluster.local:3100
+                url: http://loki-gateway.observability.svc.cluster.local
                 access: proxy
               - name: Tempo
                 type: tempo
