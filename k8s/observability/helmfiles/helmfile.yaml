@@ -1,6 +1,0 @@
-helmfiles:
-  - path: prometheus.yaml
-  - path: loki.yaml
-  - path: promtail.yaml
-  - path: tempo.yaml
-  - path: grafana.yaml

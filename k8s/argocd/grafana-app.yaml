@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://grafana.github.io/helm-charts
+    chart: grafana
+    targetRevision: 7.3.7
+    helm:
+      releaseName: grafana
+      valuesObject:
+        datasources:
+          datasources.yaml:
+            apiVersion: 1
+            datasources:
+              - name: Prometheus
+                type: prometheus
+                url: http://prometheus-server.observability.svc.cluster.local
+                access: proxy
+                isDefault: true
+              - name: Loki
+                type: loki
+                url: http://loki.observability.svc.cluster.local:3100
+                access: proxy
+              - name: Tempo
+                type: tempo
+                url: http://tempo.observability.svc.cluster.local:3100
+                access: proxy
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: observability
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
