@@ -12,6 +12,8 @@ spec:
     helm:
       releaseName: grafana
       valuesObject:
+        adminUser: admin
+        adminPassword: admin
         datasources:
           datasources.yaml:
             apiVersion: 1
