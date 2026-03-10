@@ -1,0 +1,15 @@
+repositories:
+  - name: grafana
+    url: https://grafana.github.io/helm-charts
+
+releases:
+  - name: promtail
+    namespace: observability
+    createNamespace: true
+    chart: grafana/promtail
+    # สามารถระบุ version ของ chart ที่ต้องการได้ เช่น version: "6.15.5"
+    values:
+      - config:
+          clients:
+            # url ปลายทางของ Loki ที่ Deploy เอาไว้ใน Namespace สอดคล้องกัน
+            - url: http://loki-gateway.observability.svc.cluster.local/loki/api/v1/push
