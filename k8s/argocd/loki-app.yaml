@@ -29,6 +29,8 @@ spec:
           replicas: 0
         backend:
           replicas: 0
+        gateway:
+          replicas: 1
   destination:
     server: https://kubernetes.default.svc
     namespace: observability
