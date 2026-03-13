@@ -14,7 +14,7 @@ data:
 
     exporters:
       otlp/tempo:
-        endpoint: tempo-distributor.observability.svc.cluster.local:4317
+        endpoint: tempo.observability.svc.cluster.local:4317
         tls:
           insecure: true
 
